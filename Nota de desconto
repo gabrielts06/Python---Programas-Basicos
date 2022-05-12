@@ -1,0 +1,36 @@
+#Nota de compra de produto com desconto.
+
+
+valor_produto = float(input("Digite o valor do produto: R$"))
+
+desconto10 = 10
+aplicavel = (valor_produto >100) and (valor_produto <400)
+nao_aplicavel = valor_produto <100
+
+
+def nota0():
+  ''' Esta função recebe o valor do produto, caso seja um valor baixo imprime
+  uma mensagem de desconto não aplicado'''
+  print ("Valor do porduto baixo, sem desconto aplicavel!")
+  print ("--- Valor do Produto: R$ ", valor_produto)
+  print ("--- Valor do Desconto: % 0")
+  print ("--- Total a Pagar: R$ ", valor_produto)
+
+def nota1():
+  ''' Esta função recebe o valor do produto, caso seja um valor alto
+   imprime o valor do desconto e o valor do produto com desconto, também imprime
+   uma mensagem falando que o desconto foi aplicado'''
+  porcentagem = desconto10 / 100.00
+  valor_final = valor_produto - (porcentagem * valor_produto)
+  print ("--- Valor do Produto: R$ ", valor_produto)
+  print ("--- Valor do Desconto: % ", desconto10)
+  print ("--- Total a Pagar: R$ ", valor_final)
+
+
+# Programa Principal.
+
+if nao_aplicavel:
+  nota0()
+
+if aplicavel:
+  nota1()
