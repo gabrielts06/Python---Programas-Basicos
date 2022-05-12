@@ -1,0 +1,38 @@
+#Cadastro de senha e confirmação 
+
+def cadastro():
+  ''' Esta função cadastra uma senha escolhida pelo usuário, confirma se a senha
+  é igual a anterior e armazena na variável cadastro'''
+  global cadastro
+  import getpass
+  cadastro = getpass.getpass ("Digite a nova senha:  ")
+  confirma = getpass.getpass("Digite a senha novamente: ")
+  while cadastro != confirma:
+    print("#### - As senhas não são iguais - ####")
+    cadastro = getpass.getpass ("Digite uma senha:  ")
+    confirma = getpass.getpass("Digite a senha novamente: ")
+  print (" #### - SENHA CADASTRADA COM SUCESSO - ####")
+  print ('-'*30)
+
+
+
+
+def senha ():
+  ''' Esta função recebe a senha do usuário, caso seja compátivel com
+  uma senha cadastrada o usuário tem acesso
+   caso contraio o acesso é negado''' 
+  import getpass
+  senha = cadastro
+  senha1 = getpass.getpass("Digite a senha")
+  while senha != senha1:
+    print("#### - Acesso Negado - ####")
+    senha = cadastro
+    senha1 = getpass.getpass("Digite a senha")
+  print("#### - Acesso Permitido - ####""\n  --- Bem Vindo!!! --- ")
+  print ('-'*30)
+
+# PROGRAMA PRINCIPAL.
+
+cadastro()
+
+senha()
